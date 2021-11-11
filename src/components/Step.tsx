@@ -1,5 +1,6 @@
 import { OrderedItem } from "./styled/OrderedList.styled";
 import { UnorderedList } from "./styled/UnorderedList.styled";
+import Linkify from "react-linkify";
 
 interface Props {
   step: {
@@ -16,18 +17,20 @@ const Step: React.FC<Props> = ({ step, activeStep, setActiveStep }) => {
   const isActive = id === activeStep;
 
   return (
-    <OrderedItem
-      onClick={() => (!isActive ? setActiveStep(id) : setActiveStep(0))}
-    >
-      <h2>{title}</h2>
-      {isActive && (
-        <UnorderedList>
-          {subSteps.map((subStep, index) => (
-            <li key={index}>{subStep}</li>
-          ))}
-        </UnorderedList>
-      )}
-    </OrderedItem>
+    <Linkify>
+      <OrderedItem
+        onClick={() => (!isActive ? setActiveStep(id) : setActiveStep(0))}
+      >
+        <h2>{title}</h2>
+        {isActive && (
+          <UnorderedList>
+            {subSteps.map((subStep, index) => (
+              <li key={index}>{subStep}</li>
+            ))}
+          </UnorderedList>
+        )}
+      </OrderedItem>
+    </Linkify>
   );
 };
 

@@ -19,5 +19,9 @@ export const UnorderedList = styled.ul`
     background-repeat: no-repeat;
     background-position: left center;
     background-size: ${iconSize}px;
+
+    a {
+        color: #00adaa;
+    }
   }
 `;
