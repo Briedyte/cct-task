@@ -1,7 +1,11 @@
+import StepsList from "./components/StepsList";
 
 function App() {
   return (
-    <h1>CCT Lab Process</h1>
+    <main>
+      <h1>CCT Lab Process</h1>
+      <StepsList />
+    </main>
   );
 }
 
