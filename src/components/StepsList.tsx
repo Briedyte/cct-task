@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { OrderedList } from "./styled/OrderedList.styled";
 import Step from "./Step";
 
 const StepsList: React.FC = () => {
+  const [activeStep, setActiveStep] = useState(0);
+
   const steps = [
     {
       id: 1,
@@ -35,7 +38,12 @@ const StepsList: React.FC = () => {
   return (
     <OrderedList>
       {steps.map((step) => (
-        <Step key={step.id} step={step} />
+        <Step
+          key={step.id}
+          step={step}
+          activeStep={activeStep}
+          setActiveStep={setActiveStep}
+        />
       ))}
     </OrderedList>
   );

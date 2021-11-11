@@ -1,5 +1,5 @@
-import {OrderedItem} from "./styled/OrderedList.styled"
-import {UnorderedList} from "./styled/UnorderedList.styled"
+import { OrderedItem } from "./styled/OrderedList.styled";
+import { UnorderedList } from "./styled/UnorderedList.styled";
 
 interface Props {
   step: {
@@ -7,20 +7,28 @@ interface Props {
     title: string;
     subSteps: string[];
   };
+  activeStep: number;
+  setActiveStep: React.Dispatch<number>;
 }
 
-const Step: React.FC<Props> = ({ step }) => {
-  const { title, subSteps } = step;
+const Step: React.FC<Props> = ({ step, activeStep, setActiveStep }) => {
+  const { id, title, subSteps } = step;
+  const isActive = id === activeStep;
+
   return (
-    <OrderedItem>
+    <OrderedItem
+      onClick={() => (!isActive ? setActiveStep(id) : setActiveStep(0))}
+    >
       <h2>{title}</h2>
-      <UnorderedList>
-        {subSteps.map((subStep, index) => (
-          <li key={index}>{subStep}</li>
-        ))}
-      </UnorderedList>
+      {isActive && (
+        <UnorderedList>
+          {subSteps.map((subStep, index) => (
+            <li key={index}>{subStep}</li>
+          ))}
+        </UnorderedList>
+      )}
     </OrderedItem>
   );
-}
+};
 
 export default Step;
