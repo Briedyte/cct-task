@@ -12,6 +12,7 @@ export const OrderedList = styled.ol`
   width: 100%;
   list-style: none;
   counter-reset: steps-counter;
+  cursor: pointer;
 `;
 
 export const OrderedItem = styled.li<Props>`
