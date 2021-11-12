@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
+import { theme } from "../../App";
 
-export default createGlobalStyle`
+export default createGlobalStyle<{ theme: typeof theme }>`
     * {
         box-sizing: border-box;
         margin: 0;
@@ -8,8 +9,8 @@ export default createGlobalStyle`
     }
 
     body {
-        background: #FFFFFF;
-        color: #000000;
+        background: ${({ theme }) => theme.colors.background};
+        color:  ${({ theme }) => theme.colors.text};
         font-family: 'Manrope', sans-serif;
         font-weight: 700;
         margin: 0;
@@ -18,6 +19,7 @@ export default createGlobalStyle`
     h1 {
         font-size: 4rem;
         margin-bottom: 29px;
+        color: #000000;
     }
 
     li, h2 {
@@ -25,6 +27,7 @@ export default createGlobalStyle`
     }
 
     a {
-        color: #00adaa;
+        color:  ${({ theme }) => theme.colors.primary};
+        text-decoration: none;
     }
 `;
