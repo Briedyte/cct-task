@@ -1,7 +1,13 @@
-# CCT Task
+<h1 align="center"> CCT Task</h1>
 
-Implementaion of given design of collapsibles using React.js.
-___
+<p align="center">Implementaion of a given design: collapsibles created using React.js.</p>
+
+<img href="https://briedyte.github.io/cct-task/" src="https://img.shields.io/badge/demo-available-success"> https://briedyte.github.io/cct-task/
+
+<img href="https://briedyte.github.io/cct-task/" src="app-illustration.png">
+
+---
+
 ## Installation
 
 **Run following commands in root folder of the app**
@@ -16,11 +22,9 @@ ___
    ```
 
 Open http://localhost:3000 to view it in browser.
-___
 
-
+---
 
 _**Task provided by:** [Corner Case Technologies](https://www.cornercasetech.com/)_
 
-_**Task completed by:**  [Emilija Briedytė](https://github.com/Briedyte)_
-
+_**Task completed by:** [Emilija Briedytė](https://github.com/Briedyte)_
