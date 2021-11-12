@@ -1,8 +1,8 @@
 import Linkify from "react-linkify";
 import { useRef } from "react";
+import { useSpring, animated } from "react-spring";
 import { OrderedItem } from "./styled/OrderedList.styled";
 import { UnorderedList } from "./styled/UnorderedList.styled";
-import { useSpring, animated } from "react-spring";
 
 interface Props {
   step: {
@@ -23,8 +23,8 @@ const Step: React.FC<Props> = ({ step, activeStep, setActiveStep }) => {
   const AnimatedUl = animated(UnorderedList);
 
   const expand = useSpring({
-    height: isActive ? ulHeight : 0,
-    opacity: isActive ? 1 : 0,
+    to: { height: isActive ? ulHeight : 0, opacity: isActive ? 1 : 0 },
+    config: { tension: 120, friction: 30 },
   });
 
   return (
@@ -34,6 +34,7 @@ const Step: React.FC<Props> = ({ step, activeStep, setActiveStep }) => {
         statusLineWidth={!isActive ? 200 : 300}
       >
         <h2>{title}</h2>
+
         <AnimatedUl ref={ulRef} style={expand}>
           {subSteps.map((subStep, index) => (
             <li key={index}>{subStep}</li>

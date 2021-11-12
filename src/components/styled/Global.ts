@@ -1,11 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 import { theme } from "../../App";
 
+const media = {
+  xs: "@media only screen and (max-width: 576px)",
+};
+
 export default createGlobalStyle<{ theme: typeof theme }>`
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+        ${media.xs} {
+            font-size: 14px;
+        }
     }
 
     body {
@@ -30,4 +37,5 @@ export default createGlobalStyle<{ theme: typeof theme }>`
         color:  ${({ theme }) => theme.colors.primary};
         text-decoration: none;
     }
+
 `;
