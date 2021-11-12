@@ -2,9 +2,9 @@
 
 <p align="center">Implementaion of a given design: collapsibles created using React.js.</p>
 
-<img href="https://briedyte.github.io/cct-task/" src="https://img.shields.io/badge/demo-available-success"> https://briedyte.github.io/cct-task/
+[<img src="https://img.shields.io/badge/demo-available-success">](https://briedyte.github.io/cct-task/) https://briedyte.github.io/cct-task/
 
-<img href="https://briedyte.github.io/cct-task/" src="app-illustration.png">
+[<img src="app-illustration.png">](https://briedyte.github.io/cct-task/)
 
 ---
 
