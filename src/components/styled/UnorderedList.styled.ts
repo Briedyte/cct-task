@@ -9,6 +9,7 @@ export const UnorderedList = styled.ul`
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  animation: toggleSubStep 1s forwards linear;
 
   li {
     margin: 0;
@@ -19,9 +20,16 @@ export const UnorderedList = styled.ul`
     background-repeat: no-repeat;
     background-position: left center;
     background-size: ${iconSize}px;
+  }
 
-    a {
-        color: #00adaa;
+  @keyframes toggleSubStep{
+    0% {
+      opacity: 0,
+      height: 0
+    }
+    100% {
+      opacity: 1
+      height: 200px
     }
   }
 `;

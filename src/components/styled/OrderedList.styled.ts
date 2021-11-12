@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
+interface Props {
+  statusLineWidth: number;
+}
+
 export const OrderedList = styled.ol`
   width: 100%;
   list-style: none;
   counter-reset: tasks-counter;
 `;
 
-export const OrderedItem = styled.li`
+export const OrderedItem = styled.li<Props>`
   width: 100%;
   list-style-position: inside;
   margin-bottom: 20px;
@@ -24,6 +28,7 @@ export const OrderedItem = styled.li`
       width: 50px;
       height: 53px;
       text-align: center;
+      background: #00adaa;
       background: linear-gradient(180deg, #00a9a7 0%, #00ba89 100%);
       color: white;
       margin: 16px 30px 16px 36px;
@@ -34,7 +39,8 @@ export const OrderedItem = styled.li`
       display: block;
       background: #00adaa;
       height: 2px;
-      width: 200px;
+      width: ${(props) =>
+        props.statusLineWidth ? props.statusLineWidth : 200}px;
       transition: 0.5s all;
     }
   }

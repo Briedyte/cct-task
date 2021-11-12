@@ -23,4 +23,8 @@ export default createGlobalStyle`
     li, h2 {
         font-size: 18px;
     }
+
+    a {
+        color: #00adaa;
+    }
 `;
