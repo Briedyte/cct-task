@@ -1,6 +1,12 @@
-# CCT Task
+<h1 align="center"> CCT Task</h1>
 
-Implementaion of given design of collapsibles using React.js.
+<p align="center">Implementaion of a given design: collapsibles created using React.js.</p>
+
+<img align="center" href="https://briedyte.github.io/cct-task/" src="https://img.shields.io/badge/demo-available-success"> [https://briedyte.github.io/cct-task/](https://briedyte.github.io/cct-task/)
+
+
+<img src="app-illustration.png">
+
 ___
 ## Installation
 
