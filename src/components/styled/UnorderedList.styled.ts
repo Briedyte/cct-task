@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import radioImg from "../../images/radio.svg";
 
 const iconSize = 21;
 
@@ -14,7 +15,7 @@ export const UnorderedList = styled.ul`
     margin-top: 1.25rem;
     padding-left: calc(${iconSize}px + 21px);
     list-style: none;
-    background-image: url("./images/radio.svg");
+    background-image: url(${radioImg});
     background-repeat: no-repeat;
     background-position: left center;
     background-size: ${iconSize}px;
