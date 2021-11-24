@@ -1,4 +1,3 @@
-import Linkify from "react-linkify";
 import { useRef } from "react";
 import { useSpring, animated } from "react-spring";
 import { OrderedItem } from "./styled/OrderedList.styled";
@@ -10,7 +9,7 @@ interface Props {
     title: string;
     subSteps: string[];
   };
-  activeStep: number;
+  activeStep: number | null;
   setActiveStep: React.Dispatch<number>;
 }
 
@@ -28,20 +27,18 @@ const Step: React.FC<Props> = ({ step, activeStep, setActiveStep }) => {
   });
 
   return (
-    <Linkify>
-      <OrderedItem
-        onClick={() => (!isActive ? setActiveStep(id) : setActiveStep(0))}
-        statusLineWidth={!isActive ? 200 : 300}
-      >
-        <h2>{title}</h2>
+    <OrderedItem
+      onClick={() => (!isActive ? setActiveStep(id) : setActiveStep(0))}
+      statusLineWidth={!isActive ? 200 : 300}
+    >
+      <h2>{title}</h2>
 
-        <AnimatedUl ref={ulRef} style={expand}>
-          {subSteps.map((subStep, index) => (
-            <li key={index}>{subStep}</li>
-          ))}
-        </AnimatedUl>
-      </OrderedItem>
-    </Linkify>
+      <AnimatedUl ref={ulRef} style={expand}>
+        {subSteps.map((subStep, index) => (
+          <li key={index} dangerouslySetInnerHTML={{ __html: `${subStep}` }} />
+        ))}
+      </AnimatedUl>
+    </OrderedItem>
   );
 };
 
