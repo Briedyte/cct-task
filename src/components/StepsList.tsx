@@ -3,7 +3,7 @@ import { OrderedList } from "./styled/OrderedList.styled";
 import { stepsData } from "../data/Steps.data";
 import Step from "./Step";
 
-const StepsList: React.FC = () => {
+const StepsList = () => {
   const [activeStep, setActiveStep] = useState<number | null> (null);
 
   return (

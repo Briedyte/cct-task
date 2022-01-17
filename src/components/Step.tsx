@@ -3,7 +3,7 @@ import { useSpring, animated } from "react-spring";
 import { OrderedItem } from "./styled/OrderedList.styled";
 import { UnorderedList } from "./styled/UnorderedList.styled";
 
-interface Props {
+interface StepProps {
   step: {
     id: number;
     title: string;
@@ -13,7 +13,7 @@ interface Props {
   setActiveStep: React.Dispatch<number>;
 }
 
-const Step: React.FC<Props> = ({ step, activeStep, setActiveStep }) => {
+const Step = ({ step, activeStep, setActiveStep }: StepProps) => {
   const { id, title, subSteps } = step;
   const isActive = id === activeStep;
 
