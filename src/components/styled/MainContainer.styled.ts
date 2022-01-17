@@ -1,8 +1,5 @@
 import styled from "styled-components";
-
-const media = {
-  xl: "@media only screen and (max-width: 1400px)",
-};
+import { media } from "./MeadiaQuerries";
 
 export const MainContainer = styled.main`
   width: 1400px;

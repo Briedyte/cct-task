@@ -29,7 +29,7 @@ const Step: React.FC<Props> = ({ step, activeStep, setActiveStep }) => {
   return (
     <OrderedItem
       onClick={() => (!isActive ? setActiveStep(id) : setActiveStep(0))}
-      statusLineWidth={!isActive ? 200 : 300}
+      statusLineWidth={!isActive ? 200 : 260}
     >
       <h2>{title}</h2>
 

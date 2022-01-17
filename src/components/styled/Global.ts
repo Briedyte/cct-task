@@ -1,17 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 import { theme } from "../../App";
+import { media } from "./MeadiaQuerries";
 
-const media = {
-  xs: "@media only screen and (max-width: 576px)",
-};
 
 export default createGlobalStyle<{ theme: typeof theme }>`
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
+        font-size: 16px;
         ${media.xs} {
-            font-size: 14px;
+            font-size: 12px;
         }
     }
 
