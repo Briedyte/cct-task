@@ -1,8 +1,6 @@
 import styled from "styled-components";
+import { ColorPalette } from "../../config/style";
 
-interface Props {
-  statusLineWidth: number;
-}
 
 export const OrderedList = styled.ol`
   width: 100%;
@@ -11,7 +9,7 @@ export const OrderedList = styled.ol`
   cursor: pointer;
 `;
 
-export const OrderedItem = styled.li<Props>`
+export const OrderedItem = styled.li`
   width: 100%;
   list-style-position: inside;
   margin-bottom: 1.25rem;
@@ -34,19 +32,18 @@ export const OrderedItem = styled.li<Props>`
       min-width: 50px;
       height: 53px;
       text-align: center;
-      background: ${({ theme }) => theme.colors.primary};
-      background: linear-gradient(180deg, #00a9a7 0%, #00ba89 100%);
-      color: white;
+      background: ${ColorPalette.gradient};
+      color: ${ColorPalette.white};
       margin: 16px 36px 16px 30px;
     }
 
     &:after {
       content: "";
       display: block;
-      background: ${({ theme }) => theme.colors.primary};
+      background: ${ColorPalette.primary};
       height: 2px;
-      width: ${(props) =>
-        props.statusLineWidth ? props.statusLineWidth : 200}px;
+      width: ${({ statusLineWidth }: { statusLineWidth: number }) =>
+        statusLineWidth || 200}px;
       transition: 0.5s all;
       position: absolute;
       bottom: 0;
