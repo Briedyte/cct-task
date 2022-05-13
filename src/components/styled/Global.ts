@@ -1,22 +1,20 @@
 import { createGlobalStyle } from "styled-components";
-import { theme } from "../../App";
-import { media } from "./MeadiaQuerries";
+import { ColorPalette, MediaQueries } from "../../config/style";
 
-
-export default createGlobalStyle<{ theme: typeof theme }>`
+export default createGlobalStyle`
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-        font-size: 16px;
-        ${media.xs} {
-            font-size: 12px;
+        font-size: 18px;
+        ${MediaQueries.xs} {
+            font-size: 16px;
         }
     }
 
     body {
-        background: ${({ theme }) => theme.colors.background};
-        color:  ${({ theme }) => theme.colors.text};
+        background: ${ColorPalette.background};
+        color:  ${ColorPalette.text};
         font-family: 'Manrope', sans-serif;
         font-weight: 700;
         margin: 0;
@@ -33,7 +31,7 @@ export default createGlobalStyle<{ theme: typeof theme }>`
     }
 
     a {
-        color:  ${({ theme }) => theme.colors.primary};
+        color:  ${ColorPalette.primary};
         text-decoration: none;
     }
 

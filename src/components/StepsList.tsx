@@ -4,7 +4,7 @@ import { stepsData } from "../data/Steps.data";
 import Step from "./Step";
 
 const StepsList = () => {
-  const [activeStep, setActiveStep] = useState<number | null> (null);
+  const [activeStep, setActiveStep] = useState<number | null>(null);
 
   return (
     <OrderedList>
@@ -13,7 +13,9 @@ const StepsList = () => {
           key={step.id}
           step={step}
           activeStep={activeStep}
-          setActiveStep={setActiveStep}
+          onStepClick={() =>
+            setActiveStep(activeStep === step.id ? null : step.id)
+          }
         />
       ))}
     </OrderedList>
